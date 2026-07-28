@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currículo Executivo | Fabrício Silva - Suprimentos &amp; Data Analytics</title>
+  <title>Trajetória Profissional | Fabrício Oliveira Silva — Dev &amp; Suprimentos</title>
   
   <!-- SEO & Metadados -->
-  <meta name="description" content="Trajetória profissional e competências de Fabrício Silva em Compras, Suprimentos e Análise de Dados com Python, SQL e Power BI.">
-  <meta name="author" content="Fabrício Silva">
+  <meta name="description" content="Trajetória profissional completa de Fabrício Oliveira Silva dividida entre Desenvolvimento de Software/Dados e Gestão de Suprimentos/Compras.">
+  <meta name="author" content="Fabrício Oliveira Silva">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,14 +18,16 @@
         extend: {
           colors: {
             brand: {
+              dark: '#090d16',
+              card: '#111827',
               blue: '#2563eb',
               emerald: '#059669',
-              dark: '#0f172a',
-              card: '#1e293b'
+              purple: '#7c3aed'
             }
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif']
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif']
           }
         }
       }
@@ -35,60 +37,43 @@
   <!-- Google Fonts & Ícones -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-  <!-- Estilos Customizados -->
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- ========================================================================= -->
-  <!-- CABEÇALHO / NAVEGAÇÃO SUPERIOR                                           -->
-  <!-- ========================================================================= -->
-  <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 transition-colors duration-300">
+  <!-- CABEÇALHO SUPERIOR -->
+  <header class="sticky top-0 z-50 bg-[#090d16]/85 backdrop-blur-xl border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+      <div class="flex items-center justify-between h-20">
         
-        <!-- Logo / Marca -->
-        <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-emerald-500 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
             FS
           </div>
           <div>
-            <span class="font-bold text-slate-100 text-base tracking-tight block leading-tight group-hover:text-blue-400 transition-colors">Fabrício Silva</span>
-            <span class="text-xs text-slate-400 font-medium block">Suprimentos &amp; Data Analytics</span>
+            <span class="font-heading font-extrabold text-slate-100 text-lg tracking-tight block leading-none group-hover:text-blue-400 transition-colors">Fabrício Oliveira Silva</span>
+            <span class="text-xs text-slate-400 font-medium block mt-1">Dev &amp; Suprimentos</span>
           </div>
         </a>
 
-        <!-- Links de Navegação Desktop -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
           <a href="index.html" class="hover:text-blue-400 transition-colors">Página Inicial</a>
-          <a href="index.html#projetos" class="hover:text-blue-400 transition-colors">Meus Projetos</a>
-          <a href="curriculo.html" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
-            <span class="material-symbols-outlined text-base">description</span>
-            Currículo / Trajetória
-          </a>
+          <a href="index.html#projetos" class="hover:text-blue-400 transition-colors">Projetos &amp; Automações</a>
+          <a href="curriculo.html" class="text-emerald-400 font-bold">Trajetória Separada</a>
         </nav>
 
-        <!-- Botões de Ação & Alternador de Tema -->
         <div class="flex items-center gap-3">
-          <button class="theme-toggle-btn p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all" title="Alternar Tema (Claro/Escuro)">
-            <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
-            <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
-          </button>
-          
-          <a href="Profile.pdf" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition-all">
-            <span class="material-symbols-outlined text-base">download</span>
-            <span>PDF Oficial</span>
+          <a href="Profile.pdf" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg shadow-blue-600/25 transition-all">
+            <span class="material-symbols-outlined text-sm">download</span>
+            <span>Download PDF Oficial</span>
           </a>
 
-          <!-- Menu Mobile Toggle Button -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white">
             <span class="material-symbols-outlined text-2xl">menu</span>
           </button>
         </div>
@@ -96,54 +81,56 @@
     </div>
 
     <!-- Navegação Mobile Dropdown -->
-    <div id="mobile-nav" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+    <div id="mobile-nav" class="hidden md:hidden bg-[#0f172a] border-b border-slate-800 px-4 pt-3 pb-5 space-y-2">
       <a href="index.html" class="block py-2 text-slate-300 hover:text-blue-400 font-medium">Página Inicial</a>
-      <a href="index.html#projetos" class="block py-2 text-slate-300 hover:text-blue-400 font-medium">Meus Projetos</a>
-      <a href="curriculo.html" class="block py-2 text-emerald-400 font-semibold">Currículo / Trajetória</a>
+      <a href="index.html#projetos" class="block py-2 text-slate-300 hover:text-blue-400 font-medium">Projetos &amp; Automações</a>
+      <a href="curriculo.html" class="block py-2 text-emerald-400 font-bold">Trajetória Separada</a>
     </div>
   </header>
 
-  <!-- ========================================================================= -->
-  <!-- SEÇÃO PRINCIPAL DO CURRÍCULO                                              -->
-  <!-- ========================================================================= -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main class="flex-1 py-12 lg:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- HERO RESUMO PROFISSIONAL -->
-      <div class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800 mb-12 relative overflow-hidden">
+      <div class="obsidian-card p-8 sm:p-10 rounded-3xl border border-slate-800 mb-12 relative overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div class="lg:col-span-8 space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-              Resumo Executivo
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+              Trajetória Profissional Dupla
             </div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-              Trajetória Profissional em Suprimentos &amp; Analytics
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight">
+              Fabrício Oliveira Silva
             </h1>
-            <p class="text-slate-300 text-base leading-relaxed font-normal">
-              Sólida experiência em Compras e Suprimentos, com atuação estratégica em negociação corporativa, controle de demandas, redução de custos (saving) e desenvolvimento de fornecedores. Perfil analítico com domínio de <strong>Python (Pandas)</strong>, <strong>SQL</strong>, <strong>Power BI</strong> e <strong>Excel Avançado</strong>, unindo inteligência de dados à gestão operacional.
+            <p class="text-sm font-semibold text-blue-400 uppercase tracking-wide">
+              Compras | Procurement | Strategic Sourcing | Gestão de Contratos | Negociações Estratégicas
             </p>
-            <div class="flex flex-wrap gap-3 pt-2">
-              <a href="Profile.pdf" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md transition-all">
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+              Sólida experiência em Compras e Suprimentos, com atuação estratégica em negociação, controle de demandas, redução de custos e desenvolvimento de fornecedores. Perfil analítico com domínio de <strong>Python (Pandas, Machine Learning)</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, <strong>Power Automate</strong> e <strong>N8N</strong>, além de experiência com sistemas ERP (TOTVS, SAP, Senior, Sankhya) e indicadores de performance (KPIs).
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-3">
+              <a href="Profile.pdf" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md transition-all">
                 <span class="material-symbols-outlined text-base">download</span>
-                <span>Download Currículo PDF</span>
+                <span>Baixar Currículo PDF Oficial</span>
               </a>
-              <a href="https://wa.me/5516991069995" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md transition-all">
+              <a href="https://wa.me/5516991069995" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md transition-all">
                 <i class="fab fa-whatsapp"></i>
-                <span>Falar no WhatsApp</span>
+                <span>Contato via WhatsApp</span>
               </a>
             </div>
           </div>
 
           <!-- Card de Contato Rápido & Foto -->
-          <div class="lg:col-span-4 flex flex-col items-center text-center p-6 bg-slate-800/80 rounded-2xl border border-slate-700/60">
+          <div class="lg:col-span-4 flex flex-col items-center text-center p-6 bg-slate-900/90 rounded-2xl border border-slate-800">
             <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-blue-600 shadow-xl mb-4">
-              <img src="images/1739905716703.jpg" alt="Fabrício Silva" class="w-full h-full object-cover">
+              <img src="images/1739905716703.jpg" alt="Fabrício Oliveira Silva" class="w-full h-full object-cover">
             </div>
-            <h3 class="text-lg font-bold text-slate-100">Fabrício Silva</h3>
-            <p class="text-xs text-slate-400 mb-4">Analista de Compras &amp; Suprimentos</p>
+            <h3 class="text-lg font-bold text-slate-100">Fabrício Oliveira Silva</h3>
+            <p class="text-xs text-slate-400 mb-4">Sertãozinho, São Paulo, Brasil</p>
             
-            <div class="w-full space-y-2 text-xs text-left text-slate-300 border-t border-slate-700 pt-4">
+            <div class="w-full space-y-2 text-xs text-left text-slate-300 border-t border-slate-800 pt-4">
               <div class="flex items-center gap-2">
                 <i class="fas fa-envelope text-blue-400"></i>
                 <a href="mailto:fabricio_la_gnt@hotmail.com" class="hover:text-blue-300">fabricio_la_gnt@hotmail.com</a>
@@ -153,8 +140,8 @@
                 <span>(16) 99106-9995</span>
               </div>
               <div class="flex items-center gap-2">
-                <i class="fas fa-map-marker-alt text-rose-400"></i>
-                <span>Sertãozinho - SP</span>
+                <i class="fab fa-linkedin text-cyan-400"></i>
+                <a href="https://www.linkedin.com/in/compradorfabriciosilva/" target="_blank" class="hover:text-cyan-300">compradorfabriciosilva</a>
               </div>
             </div>
           </div>
@@ -162,15 +149,33 @@
         </div>
       </div>
 
-      <!-- TIMELINE DE EXPERIÊNCIA PROFISSIONAL -->
-      <div class="mb-16">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-400 flex items-center justify-center font-bold">
-            <span class="material-symbols-outlined">work</span>
+      <!-- BOTÕES DE SELEÇÃO DA ABA DE EXPERIÊNCIA DUAL -->
+      <div class="flex justify-center mb-12">
+        <div class="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 gap-2">
+          <button class="pillar-tab-trigger active px-6 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-600 text-white shadow-lg" data-pillar="compras">
+            <i class="fas fa-boxes mr-2"></i>
+            1. Trajetória em Suprimentos &amp; Compras
+          </button>
+
+          <button class="pillar-tab-trigger px-6 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-800/80 text-slate-400 hover:text-white" data-pillar="dev">
+            <i class="fas fa-code mr-2"></i>
+            2. Trajetória em Desenvolvimento, Dados &amp; Automação
+          </button>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- PILAR 1: TRAJETÓRIA EM SUPRIMENTOS E COMPRAS                              -->
+      <!-- ========================================================================= -->
+      <div id="pillar-compras" class="pillar-tab-content block space-y-12">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined">shopping_bag</span>
           </div>
           <div>
-            <h2 class="text-2xl font-bold text-slate-100 tracking-tight">Experiência Profissional</h2>
-            <p class="text-xs text-slate-400">Histórico de atuação corporativa e resultados entregues</p>
+            <h2 class="text-2xl font-bold text-slate-100 tracking-tight">Experiência Profissional em Suprimentos</h2>
+            <p class="text-xs text-slate-400">Histórico corporativo registrado no LinkedIn de Fabrício Oliveira Silva</p>
           </div>
         </div>
 
@@ -178,85 +183,121 @@
           
           <!-- ITEM 1: Barra Mansa Alimentos -->
           <div class="relative pl-8 sm:pl-12">
-            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-slate-900"></div>
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-[#090d16]"></div>
+            <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                <h3 class="text-xl font-bold text-slate-100">Analista de Compras</h3>
-                <span class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/20 mt-1 sm:mt-0">
-                  Fev 2024 - Set 2025 (1 ano 8 meses)
+                <h3 class="text-xl font-bold text-slate-100">Analista de compras</h3>
+                <span class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/20 mt-1 sm:mt-0">
+                  Fevereiro de 2024 - Setembro de 2025 (1 ano 8 meses)
                 </span>
               </div>
-              <p class="text-sm font-semibold text-emerald-400 mb-3">Barra Mansa Alimentos</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Responsável pelas compras de materiais diretos e indiretos, incluindo itens elétricos, automação, hidráulicos, combustíveis e insumos para caldeiras. Atuação estratégica na análise de dados do setor de suprimentos utilizando Power BI para gerar insights que apoiam decisões e otimizam processos de cotação e homologação de parceiros.
+              <p class="text-sm font-semibold text-blue-400 mb-1">Barra Mansa Alimentos</p>
+              <p class="text-xs text-slate-400 mb-3">Sertãozinho, São Paulo, Brasil</p>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Responsável pelas compras de materiais diretos e indiretos, incluindo itens elétricos, automação, hidráulicos, combustíveis e insumos para caldeiras, garantindo a continuidade operacional e eficiência dos processos. Atuo também na análise de dados do setor de suprimentos, utilizando Power BI para desenvolver relatórios e gerar insights que apoiam decisões estratégicas e otimizam processos.
               </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Power BI</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Strategic Sourcing</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Insumos Industriais</span>
+              </div>
             </div>
           </div>
 
           <!-- ITEM 2: SuperFrio Logística -->
           <div class="relative pl-8 sm:pl-12">
-            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-slate-900"></div>
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-[#090d16]"></div>
+            <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                 <h3 class="text-xl font-bold text-slate-100">Comprador</h3>
                 <span class="inline-block bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700 mt-1 sm:mt-0">
-                  Fev 2023 - Nov 2023 (10 meses)
+                  Fevereiro de 2023 - Novembro de 2023 (10 meses)
                 </span>
               </div>
-              <p class="text-sm font-semibold text-emerald-400 mb-3">SuperFrio Logística Frigorificada</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Aquisição de produtos e serviços para as áreas de Tecnologia, Segurança do Trabalho e Construção Civil. Foco em compras para expansão e implantação de novas filiais, garantindo o suprimento contínuo para abertura e operação dentro dos SLAs contratuais.
+              <p class="text-sm font-semibold text-blue-400 mb-1">SuperFrio Logística Frigorificada</p>
+              <p class="text-xs text-slate-400 mb-3">Ribeirão Preto, São Paulo, Brasil</p>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Responsável pela aquisição de produtos e serviços nas áreas de Tecnologia, Segurança do Trabalho e Construção Civil, bem como pelas compras relacionadas à expansão, incluindo a implantação de novas filiais, garantindo o fornecimento adequado para a abertura e operação das unidades.
               </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Expansão de Filiais</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Compras de TI &amp; Obras</span>
+              </div>
             </div>
           </div>
 
           <!-- ITEM 3: Resolv -->
           <div class="relative pl-8 sm:pl-12">
-            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-slate-900"></div>
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-[#090d16]"></div>
+            <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                <h3 class="text-xl font-bold text-slate-100">Analista de Compras Sênior</h3>
+                <h3 class="text-xl font-bold text-slate-100">Analista De Compras Senior</h3>
                 <span class="inline-block bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700 mt-1 sm:mt-0">
-                  Mar 2022 - Fev 2023 (1 ano)
+                  Março de 2022 - Fevereiro de 2023 (1 ano)
                 </span>
               </div>
-              <p class="text-sm font-semibold text-emerald-400 mb-3">Resolv</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Responsável pela aquisição de alimentos (laticínios, padaria, frios) para mais de 40 unidades em todo o Brasil. Negociação técnica de materiais para obras em novos restaurantes, assegurando prazos rigorosos, tabelas de preços alinhadas e eficiência no abastecimento nacional.
+              <p class="text-sm font-semibold text-blue-400 mb-1">Resolv</p>
+              <p class="text-xs text-slate-400 mb-3">Ribeirão Preto, São Paulo, Brasil</p>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Responsável pela aquisição de alimentos, incluindo laticínios, produtos de padaria e frios, para mais de 40 unidades em todo o Brasil. Atuação também na negociação e compra de materiais para obras em novos restaurantes, assegurando o abastecimento eficiente e o cumprimento rigoroso dos prazos estabelecidos.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">40+ Unidades no Brasil</span>
+                <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Abastecimento Nacional</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 4: Barra Mansa Alimentos (Almoxarifado) -->
+          <div class="relative pl-8 sm:pl-12">
+            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-[#090d16]"></div>
+            <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                <h3 class="text-xl font-bold text-slate-100">Encarregado de Almoxarifado</h3>
+                <span class="inline-block bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700 mt-1 sm:mt-0">
+                  Maio de 2020 - Agosto de 2021 (1 ano 4 meses)
+                </span>
+              </div>
+              <p class="text-sm font-semibold text-blue-400 mb-1">Barra Mansa Alimentos</p>
+              <p class="text-xs text-slate-400 mb-3">Sertãozinho, São Paulo, Brasil</p>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Iniciei minha trajetória como Comprador, atuando na aquisição de materiais e insumos, negociação com fornecedores e controle de pedidos. Após seis meses, fui promovido a Encarregado de Almoxarifado, assumindo a gestão de estoque, controle de entradas e saídas de materiais, além da organização logística e apoio às áreas operacionais.
               </p>
             </div>
           </div>
 
-          <!-- ITEM 4: Barra Mansa Alimentos (Anterior) -->
+          <!-- ITEM 5: JAB ISOLANTES TERMICOS -->
           <div class="relative pl-8 sm:pl-12">
-            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-slate-900"></div>
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                <h3 class="text-xl font-bold text-slate-100">Encarregado de Almoxarifado / Comprador</h3>
-                <span class="inline-block bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700 mt-1 sm:mt-0">
-                  Maio 2020 - Ago 2021 (1 ano 4 meses)
-                </span>
-              </div>
-              <p class="text-sm font-semibold text-emerald-400 mb-3">Barra Mansa Alimentos</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Trajetória iniciada como Comprador e promovida a Encarregado após 6 meses devido aos excelentes resultados. Gestão completa de estoque, acuracidade de inventário, controle de entradas/saídas e coordenação de logística operacional.
-              </p>
-            </div>
-          </div>
-
-          <!-- ITEM 5: JAB Isolantes Térmicos -->
-          <div class="relative pl-8 sm:pl-12">
-            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-slate-900"></div>
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-[#090d16]"></div>
+            <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                 <h3 class="text-xl font-bold text-slate-100">Comprador</h3>
                 <span class="inline-block bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700 mt-1 sm:mt-0">
-                  Mar 2016 - Jan 2019 (2 anos 11 meses)
+                  Março de 2016 - Janeiro de 2019 (2 anos 11 meses)
                 </span>
               </div>
-              <p class="text-sm font-semibold text-emerald-400 mb-3">JAB Isolantes Térmicos</p>
+              <p class="text-sm font-semibold text-blue-400 mb-1">JAB ISOLANTES TERMICOS</p>
+              <p class="text-xs text-slate-400 mb-3">Sertãozinho, São Paulo, Brasil</p>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Responsável pela aquisição de materiais para construção civil e isolamento térmico em usinas e fábricas. Atuação em negociações estratégicas, análise de cotações, gestão de contratos e desenvolvimento de fornecedores.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 6: Gotherma -->
+          <div class="relative pl-8 sm:pl-12">
+            <div class="absolute left-1.5 sm:left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-[#090d16]"></div>
+            <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                <h3 class="text-xl font-bold text-slate-100">Analista administrativo</h3>
+                <span class="inline-block bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700 mt-1 sm:mt-0">
+                  Fevereiro de 2013 - Fevereiro de 2016 (3 anos 1 mês)
+                </span>
+              </div>
+              <p class="text-sm font-semibold text-blue-400 mb-1">Gotherma</p>
+              <p class="text-xs text-slate-400 mb-3">Sertãozinho, São Paulo, Brasil</p>
               <p class="text-slate-300 text-sm leading-relaxed">
-                Aquisição de materiais para construção civil e isolamento térmico em usinas e fábricas. Foco em negociações estratégicas de alto volume e desenvolvimento de novos parceiros comerciais.
+                Iniciei minha carreira como Auxiliar Administrativo, atuando em atividades de apoio geral. Ao longo dos anos, passei por diversos setores, como Recursos Humanos e Financeiro, adquirindo uma visão ampla dos processos internos. Posteriormente, migrei para a área de Compras, onde me especializei e consolidei minha trajetória profissional.
               </p>
             </div>
           </div>
@@ -264,37 +305,514 @@
         </div>
       </div>
 
-      <!-- MATRIZ DE COMPETÊNCIAS & FORMAÇÃO -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- ========================================================================= -->
+      <!-- PILAR 2: TRAJETÓRIA EM DESENVOLVIMENTO DE SOFTWARE E DADOS                -->
+      <!-- ========================================================================= -->
+      <div id="pillar-dev" class="pillar-tab-content hidden space-y-12">
         
-        <!-- MATRIZ DE HABILIDADES -->
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold">
+              <span class="material-symbols-outlined">terminal</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-slate-100 tracking-tight">Projetos &amp; Repositórios no GitHub</h2>
+              <p class="text-xs text-slate-400">Total de 29 repositórios mapeados no perfil @Fabricio-O-S (Públicos e Privados)</p>
+            </div>
+          </div>
+
+          <span class="bg-blue-500/10 text-blue-400 text-xs font-bold px-3.5 py-1.5 rounded-full border border-blue-500/25">
+            29 Repositórios Mapeados
+          </span>
+        </div>
+
+        <!-- GRID DE 29 PROJETOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- REPO 1 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-blue-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML / CSS / Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Portfolio_Data_Analytics</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Plataforma executiva de portfólio e currículo dual (Dev &amp; Suprimentos) com design Obsidian Glass 2.0 e navegação interativa.
+              </p>
+            </div>
+            <a href="https://github.com/Fabricio-O-S/Portfolio_Data_Analytics" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs font-bold inline-flex items-center gap-1">
+              <span>Acessar no GitHub</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+
+          <!-- REPO 2 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">devops-api-cloud</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                API em Python desenvolvida para práticas de DevOps, deploy em infraestrutura cloud e conteinerização.
+              </p>
+            </div>
+            <a href="https://github.com/Fabricio-O-S/devops-api-cloud" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs font-bold inline-flex items-center gap-1">
+              <span>Acessar no GitHub</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+
+          <!-- REPO 3 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Bravvi_Landingpage_tec</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Landing page comercial e institucional responsiva voltada para a promoção de serviços em tecnologia (Bravvi).
+              </p>
+            </div>
+            <a href="https://github.com/Fabricio-O-S/Bravvi_Landingpage_tec" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs font-bold inline-flex items-center gap-1">
+              <span>Acessar no GitHub</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+
+          <!-- REPO 4 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
+                <span class="text-[11px] text-slate-400 font-mono">Shell / Infra</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Linux_e_Servidores</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Repositório de scripts de automação Bash e guias de administração de servidores e infraestrutura Linux.
+              </p>
+            </div>
+            <a href="https://github.com/Fabricio-O-S/Linux_e_Servidores" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs font-bold inline-flex items-center gap-1">
+              <span>Acessar no GitHub</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+
+          <!-- REPO 5 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Portal_Fornecedor_2026</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Portal em Python para gestão de fornecedores, recebimento de propostas comerciais e cotações online.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 6 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Sistema-de-Backup-Python</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Rotina automatizada de backup de bancos de dados locais em Python, com compressão e geração de logs.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 7 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python / Flask</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Simulador_Tributario-</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Ferramenta em Python/Flask para cálculo automático de ICMS-ST e Diferencial de Alíquota (DIFAL) em cotações.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 8 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">viscal_guard_cadastros</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Sistema de auditoria fiscal e validação de alíquotas NCM/PDM em Python para conciliação de NF-e.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 9 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">padroniza-o_cadastro</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Algoritmo em Python/Pandas para higienização e padronização PDM de insumos em almoxarifados industriais.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 10 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">monitor_infra</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Script em Python para monitoramento preventivo de disponibilidade de infraestrutura e serviços operacionais.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 11 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">monitor-saude-dispositivos</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Sistema em Python para acompanhamento da saúde de dispositivos operacionais, SLAs e alertas de falhas.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 12 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML / Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">PyInventory</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Sistema completo em Python para controle de inventário de estoques, entradas, saídas e movimentações.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 13 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML / JS</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Portal_Interno_v1</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Portal interno corporativo para automatização de processos internos e centralização de ferramentas.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 14 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">cadastro_insumos_v2</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Versão 2.0 da aplicação de cadastro e validação automatizada de insumos industriais em Python.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 15 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML / Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">projeto_python_patrimonio</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Sistema web em Python para controle patrimonial de ativos físicos, depreciação e rastreamento.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 16 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python / Infra</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">projeto_patrimonios-</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Módulo de inventário físico e auditoria patrimonial corporativa integrado a bancos de dados.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 17 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python / Flask</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">ecommerce-mvp</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                MVP de plataforma de e-commerce construído em Python, com catálogo de produtos e fluxo de compra.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 18 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">TypeScript</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">bravvi</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Aplicação web modernizada desenvolvida em TypeScript para a plataforma corporativa Bravvi.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 19 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">CSS / JS</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">ia-bravvi</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Interface visual e protótipo interativo para integração de modelos de Inteligência Artificial da Bravvi.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 20 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">air_bravvi</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Plataforma web responsiva para serviços de logística e monitoramento remoto de ativos Bravvi Air.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 21 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">bravvi-news</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Portal de notícias corporativas e comunicados internos com design responsivo.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 22 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Portal_Doc_Goth</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Central de documentação técnica, procedimentos padrão (SOPs) e manuais de processos administrativos.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 23 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Ruby</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">redmine_edit_fabricio</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Customização backend e desenvolvimento de plugins em Ruby para a plataforma de gestão Redmine.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 24 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">CSS</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">redmine-theme-edit</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Tema customizado e refatoração de interface de usuário (UI/UX) para o sistema de gestão Redmine.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 25 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML / JS</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">tela_de_seguran-a</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Módulo de autenticação de usuários, tela de login e controle de acessos de segurança corporativa.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 26 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">HTML / JS</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">projeto_v</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Dashboard de análise de vendas e acompanhamento de performance comercial em tempo real.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 27 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Power BI</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Dashboard-Projetos-BM-Pausado</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Dashboard em Power BI para monitoramento de projetos industriais e controle de indicadores de prazo.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 28 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
+                <span class="text-[11px] text-slate-400 font-mono">Python</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Antigravity_Trabalhos_Privados</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Repositório concentrador de rotinas privadas de automação, scripts de suporte e integrações.
+              </p>
+            </div>
+            <span class="text-purple-400 text-xs font-semibold">Repositório Corporativo Privado</span>
+          </div>
+
+          <!-- REPO 29 -->
+          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
+                <span class="text-[11px] text-slate-400 font-mono">Markdown</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-100 mb-1">Fabricio-O-S</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Repositório especial de perfil do GitHub contendo resumo de habilidades, experiências e stack tecnológica.
+              </p>
+            </div>
+            <a href="https://github.com/Fabricio-O-S/Fabricio-O-S" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs font-bold inline-flex items-center gap-1">
+              <span>Acessar no GitHub</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MATRIZ DE COMPETÊNCIAS E FORMAÇÃO -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-12">
+        
+        <!-- HABILIDADES DIVIDIDAS -->
         <div class="lg:col-span-7">
-          <div class="glass-card p-8 rounded-2xl border border-slate-800 h-full">
+          <div class="obsidian-card p-8 rounded-3xl border border-slate-800 h-full">
             <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center gap-2">
               <span class="material-symbols-outlined text-blue-400">tune</span>
-              Matriz de Competências
+              Habilidades Técnicas &amp; Comportamentais
             </h3>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <h4 class="text-sm font-bold text-blue-400 uppercase tracking-wider mb-3">Core Business</h4>
-                <ul class="space-y-2 text-sm text-slate-300">
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Strategic Sourcing</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Negociação com Fornecedores</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Gestão de Contratos &amp; Compliance</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Gestão de Estoque &amp; Almoxarifado</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Redução de Custos (Saving)</li>
+                <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-3">Suprimentos &amp; Compras</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negociação estratégica com fornecedores</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Análise de indicadores de compras (KPIs)</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Gestão de contratos e compliance</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Desenvolvimento e homologação</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Planejamento e controle de estoque</li>
                 </ul>
               </div>
 
               <div>
-                <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3">Sistemas &amp; Tech</h4>
-                <ul class="space-y-2 text-sm text-slate-300">
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Sistemas ERP (SAP, TOTVS)</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Power BI &amp; Modelagem DAX</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Python &amp; SQL para Automação</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Power Automate</li>
-                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Excel Avançado &amp; VBA</li>
+                <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-3">Tecnologia &amp; Automação</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Python (Pandas, Machine Learning)</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>SQL (PostgreSQL, SQLite, MySQL)</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Power BI &amp; Power Automate</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Automação N8N &amp; ETL</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>ERPs (TOTVS, SAP, Senior, Sankhya)</li>
                 </ul>
               </div>
             </div>
@@ -303,25 +821,44 @@
 
         <!-- FORMAÇÃO ACADÊMICA -->
         <div class="lg:col-span-5">
-          <div class="glass-card p-8 rounded-2xl border border-slate-800 h-full">
+          <div class="obsidian-card p-8 rounded-3xl border border-slate-800 h-full">
             <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center gap-2">
               <span class="material-symbols-outlined text-emerald-400">school</span>
               Formação Acadêmica
             </h3>
 
             <div class="space-y-6">
-              <div class="border-l-2 border-emerald-500 pl-4">
-                <span class="text-xs font-semibold text-emerald-400">2022</span>
+              <!-- PÓS-GRADUAÇÃO ESTÁCIO -->
+              <div class="border-l-2 border-purple-500 pl-4">
+                <span class="text-xs font-bold text-purple-400">Janeiro de 2026 – Julho de 2026</span>
                 <h4 class="text-base font-bold text-slate-100 mt-1">Pós-graduação Lato Sensu</h4>
-                <p class="text-sm text-slate-300 font-medium">Gestão de Materiais e Suprimentos</p>
-                <p class="text-xs text-slate-400 mt-1">Faculdades Prominas</p>
+                <p class="text-xs text-slate-300 font-semibold">Ciência de Dados e Big Data Analytics, Information Technology</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Estácio</p>
+                <p class="text-[11px] text-slate-400 leading-relaxed mt-1.5">
+                  Especialização voltada à coleta, tratamento, análise e interpretação de grandes volumes de dados para suporte à tomada de decisão estratégica. Abrange conceitos de estatística, mineração de dados, Business Intelligence (BI), Big Data, Machine Learning, visualização de dados, bancos de dados relacionais e não relacionais, além de ferramentas e linguagens utilizadas em projetos analíticos, como Python, SQL e Power BI.
+                </p>
               </div>
 
+              <!-- PÓS-GRADUAÇÃO PROMINAS -->
+              <div class="border-l-2 border-emerald-500 pl-4">
+                <span class="text-xs font-bold text-emerald-400">Janeiro de 2022 – Julho de 2022</span>
+                <h4 class="text-base font-bold text-slate-100 mt-1">Pós-graduação Lato Sensu</h4>
+                <p class="text-xs text-slate-300 font-semibold">Gestão de Materiais e Suprimentos</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Faculdades Prominas</p>
+                <p class="text-[11px] text-slate-400 leading-relaxed mt-1.5">
+                  Especialização voltada ao planejamento, controle e otimização de processos de compras, armazenagem, logística e gestão de estoques. Capacita o profissional a desenvolver estratégias eficientes de suprimentos, negociar com fornecedores, reduzir custos operacionais e garantir o abastecimento contínuo das operações, alinhando a cadeia de suprimentos aos objetivos organizacionais.
+                </p>
+              </div>
+
+              <!-- GRADUAÇÃO / ENSINO SUPERIOR UNIFRAN -->
               <div class="border-l-2 border-blue-500 pl-4">
-                <span class="text-xs font-semibold text-blue-400">2018 - 2021</span>
-                <h4 class="text-base font-bold text-slate-100 mt-1">Ensino Superior</h4>
-                <p class="text-sm text-slate-300 font-medium">Tecnologia da Informação</p>
-                <p class="text-xs text-slate-400 mt-1">Universidade de Franca</p>
+                <span class="text-xs font-bold text-blue-400">Janeiro de 2018 – Dezembro de 2021</span>
+                <h4 class="text-base font-bold text-slate-100 mt-1">Graduação / Ensino Superior</h4>
+                <p class="text-xs text-slate-300 font-semibold">Tecnologia da Informação</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Universidade de Franca (UNIFRAN)</p>
+                <p class="text-[11px] text-slate-400 leading-relaxed mt-1.5">
+                  Formação superior abrangendo arquitetura de computadores, engenharia de software, lógica de programação, banco de dados relacionais, análise de sistemas e governança de TI.
+                </p>
               </div>
             </div>
           </div>
@@ -332,14 +869,12 @@
     </div>
   </main>
 
-  <!-- ========================================================================= -->
-  <!-- RODAPÉ                                                                    -->
-  <!-- ========================================================================= -->
-  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-8">
+  <!-- RODAPÉ -->
+  <footer class="bg-[#05080f] text-slate-400 border-t border-slate-800 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-      <p>&copy; 2026 Fabrício Silva. Todos os direitos reservados.</p>
+      <p>&copy; 2026 Fabrício Oliveira Silva. Todos os direitos reservados.</p>
       <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:text-slate-200">Início</a>
+        <a href="index.html" class="hover:text-slate-200">Página Inicial</a>
         <a href="index.html#projetos" class="hover:text-slate-200">Projetos</a>
         <a href="https://www.linkedin.com/in/compradorfabriciosilva/" target="_blank" class="hover:text-slate-200">LinkedIn</a>
       </div>

@@ -1,128 +1,124 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Monitor de Dispositivos | Portfólio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="main">
-				<div class="inner">
-					<header id="header">
-						<a href="index.html" class="logo"><strong>Fabrício Silva</strong> | Analista de Dados &amp; Suprimentos</a>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/compradorfabriciosilva/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Fabricio-O-S" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</header>
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor de Saúde Operacional &amp; KPIs | Fabrício Silva</title>
+  
+  <meta name="description" content="Dashboard de Monitoramento de KPIs de Saúde Operacional e SLAs por Fabrício Silva.">
+  <meta name="author" content="Fabrício Silva">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { brand: { blue: '#2563eb', emerald: '#059669', dark: '#0f172a', card: '#1e293b' } },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
 
-					<section>
-						<header class="main">
-							<h1>Monitor de Saúde de Dispositivos (Socket &amp; PJL)</h1>
-						</header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
 
-						<span class="image main" style="width: 100%; height: 500px; margin: 0 auto 2em auto; display: block;"><img src="images/banner.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 8px;" /></span>
+  <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+            FS
+          </div>
+          <div>
+            <span class="font-bold text-slate-100 text-base block leading-tight group-hover:text-blue-400">Fabrício Silva</span>
+            <span class="text-xs text-slate-400 font-medium block">Data Analytics &amp; Suprimentos</span>
+          </div>
+        </a>
 
-						<h2>Objetivo do Sistema</h2>
-						<p>Este projeto foi desenvolvido para suprir uma necessidade de monitoramento de infraestrutura de TI de forma leve e automatizada. O script testa a conectividade (ping) de uma lista de dispositivos de rede, registrando logs de falha e sucesso em tempo real com uma interface visual dinâmica.</p>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="index.html" class="hover:text-blue-400 transition-colors">Página Inicial</a>
+          <a href="index.html#projetos" class="text-blue-400 font-semibold">Projetos</a>
+          <a href="curriculo.html" class="hover:text-emerald-400 transition-colors">Currículo</a>
+        </nav>
 
-						<h2>Inovação com Protocolos de Rede</h2>
-						<ul>
-							<li><strong>Controle de Hardware (PJL):</strong> Implementação de comandos de baixo nível via protocolo <em>Printer Job Language</em> para interagir diretamente com impressoras na rede (ex: solicitar página de configuração).</li>
-							<li><strong>Conexão via Sockets:</strong> Uso da biblioteca Socket do Python para comunicação direta em portas específicas (ex: porta 9100), garantindo controle total sobre o tráfego de rede.</li>
-							<li><strong>Interface Streamlit:</strong> Uso de <code>st.session_state</code> para manter os dados de monitoramento persistentes enquanto o usuário interage com o painel, sem perder o histórico do "ping".</li>
-							<li><strong>Tratamento de Exceções:</strong> Lógica robusta com timeouts configuráveis para evitar que dispositivos offline travem a execução do loop de monitoramento.</li>
-						</ul>
+        <div class="flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700">
+            <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+          </button>
+          <a href="index.html#projetos" class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium border border-slate-700">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            <span>Voltar aos Projetos</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-						<h2>Visão Técnica</h2>
-						<p>O foco aqui não foi apenas o "Data Analytics", mas sim a <strong>Engenharia de Automação</strong> para infraestrutura, provando que o Python pode ser uma ferramenta poderosa para manter a disponibilidade de ativos em nível operacional.</p>
+  <main class="flex-1 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/20">Operational Analytics</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">Power BI</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">DAX</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">SQL Server</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+          Monitor de Saúde Operacional &amp; Alertas de SLAs
+        </h1>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Painel centralizador de saúde dos processos de compras e recebimento físico, sinalizando gargalos de inventário e alertas em tempo real.
+        </p>
+      </div>
 
-						<hr class="major" />
+      <div class="glass-card rounded-2xl p-2 border border-slate-800 overflow-hidden shadow-2xl">
+        <img src="images/banner.png" alt="Monitor de Saude" class="w-full h-auto rounded-xl object-cover">
+      </div>
 
-						<h2>Resultados e Valor de Negócio</h2>
-						<ul>
-							<li><strong>Disponibilidade de Infraestrutura:</strong> Monitoramento proativo em tempo real que reduziu em 50% o downtime de dispositivos críticos através da detecção precoce de falhas.</li>
-							<li><strong>Manutenção Remota:</strong> Integração com protocolo PJL que permite ações remotas rápidas, economizando custos de deslocamento técnico.</li>
-							<li><strong>Visibilidade de Rede:</strong> Painel Streamlit que transformou logs de sistema em indicadores visuais claros para a gestão de TI.</li>
-						</ul>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">Disponibilidade</span>
+          <p class="text-2xl font-bold text-slate-100">99.8%</p>
+          <p class="text-xs text-slate-400 mt-1">Uptime dos relatórios automáticos</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-1">SLAs Monitorados</span>
+          <p class="text-2xl font-bold text-slate-100">12 KPIs</p>
+          <p class="text-xs text-slate-400 mt-1">Gargalos identificados preventivamente</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-1">Atualização</span>
+          <p class="text-2xl font-bold text-slate-100">Hora em Hora</p>
+          <p class="text-xs text-slate-400 mt-1">Carga via SQL Server</p>
+        </div>
+      </div>
 
-						<hr class="major" />
+    </div>
+  </main>
 
-						<h2>Acesso ao Repositório</h2>
-						<p>Veja como configurar sua lista de IPs e rodar o monitor localmente:</p>
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>&copy; 2026 Fabrício Silva. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-slate-200">Página Inicial</a>
+        <a href="index.html#projetos" class="hover:text-slate-200">Projetos</a>
+        <a href="curriculo.html" class="hover:text-slate-200">Currículo</a>
+      </div>
+    </div>
+  </footer>
 
-						<ul class="actions">
-							<li><a href="https://github.com/Fabricio-O-S/monitor-saude-dispositivos" target="_blank" class="button primary large">Ver Código no GitHub</a></li>
-							<li><a href="index.html#projetos" class="button large">Voltar aos Projetos</a></li>
-						</ul>
-
-					</section>
-				</div>
-			</div>
-
-			<div id="sidebar">
-				<div class="inner">
-					<section id="search" class="alt">
-						<form method="post" action="#">
-							<input type="text" name="query" id="query" placeholder="Pesquisar" />
-						</form>
-					</section>
-
-					<section style="text-align: center; border-bottom: solid 1px rgba(210, 215, 217, 0.75); padding-bottom: 2em; margin-bottom: 2em;">
-						<div style="width: 150px; height: 150px; margin: 0 auto 1.5em auto; border-radius: 50%; overflow: hidden; border: 4px solid #1E3A8A; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-							<img src="images/1739905716703.jpg" alt="Fabrício Silva" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-						</div>
-						<h3 style="margin-bottom: 0.2em;">Fabrício Silva</h3>
-						<p style="font-size: 0.9em; margin-bottom: 2em; color: #7f888f;">Data &amp; Supply Chain Analytics</p>
-
-						<ul class="contact" style="text-align: left; margin: 0; padding-top: 1.5em; border-top: solid 1px rgba(210, 215, 217, 0.75);">
-							<li class="icon solid fa-envelope"><a href="mailto:fabricio_la_gnt@hotmail.com">fabricio_la_gnt@hotmail.com</a></li>
-							<li class="icon solid fa-phone">(16) 99106-9995</li>
-							<li class="icon solid fa-home">Sertãozinho - SP</li>
-						</ul>
-					</section>
-
-					<!-- =====================================================
-					    SEÇÃO DE HARD SKILLS (ADICIONADA)
-					    ===================================================== -->
-					<section id="hard-skills" style="padding-top: 0;">
-						<header class="major">
-							<h2>Hard Skills</h2>
-						</header>
-						<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-							<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-							<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
-							<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" alt="Power BI" />
-							<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-							<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-							<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit" />
-							<img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel" />
-						</div>
-					</section>
-
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="index.html">Página Inicial</a></li>
-							<li><a href="index.html#projetos">Meus Projetos</a></li>
-							<li><a href="curriculo.html">Sobre Mim / Currículo</a></li>
-						</ul>
-					</nav>
-
-					<footer id="footer">
-						<p class="copyright">&copy; Fabrício Silva. Todos os direitos reservados.</p>
-					</footer>
-				</div>
-			</div>
-		</div>
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

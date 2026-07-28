@@ -1,292 +1,162 @@
-<!DOCTYPE HTML>
-<!--
-    ============================================================
-    PORTFÓLIO DE DATA ANALYTICS — Fabrício Silva
-    ============================================================
-    Arquivo: projeto_logistica.html
-    Função : Página de detalhes do Projeto "Dashboard Logística"
-    Autor  : Fabrício Silva
-    Template: Editorial by HTML5 UP (html5up.net | @ajlkn)
-    ============================================================
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otimização Logística &amp; Controle de Frete | Fabrício Silva</title>
+  
+  <meta name="description" content="Dashboard de Otimização Logística e controle de custos de frete por tonelada desenvolvido por Fabrício Silva.">
+  <meta name="author" content="Fabrício Silva">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#2563eb', emerald: '#059669', dark: '#0f172a', card: '#1e293b' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
 
-    CONCEITO: SLA (Service Level Agreement)
-    SLA é o Acordo de Nível de Serviço — um contrato que define
-    o tempo máximo permitido para uma entrega, atendimento, etc.
-    No contexto deste dashboard:
-    - "On-Time" = entregas realizadas DENTRO do prazo SLA
-    - Medir o SLA é fundamental para logística: permite identificar
-      rotas problemáticas, transportadoras lentas, etc.
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
 
-    CONCEITO: KPI vs MÉTRICA
-    - Métrica = qualquer número mensurável (ex: número de entregas)
-    - KPI = Key Performance Indicator = métrica ESTRATÉGICA que
-      reflete diretamente o desempenho do negócio (ex: taxa on-time)
-    Um bom dashboard separa claramente os KPIs dos dados brutos.
-    ============================================================
--->
-<html>
-	<head>
-		<!-- Título otimizado: descreve o projeto + nome do site -->
-		<title>Dashboard Logística — Desempenho Operacional | Portfólio</title>
+  <!-- CABEÇALHO -->
+  <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+            FS
+          </div>
+          <div>
+            <span class="font-bold text-slate-100 text-base block leading-tight group-hover:text-blue-400">Fabrício Silva</span>
+            <span class="text-xs text-slate-400 font-medium block">Data Analytics &amp; Suprimentos</span>
+          </div>
+        </a>
 
-		<!-- UTF-8: suporte completo a caracteres pt-BR -->
-		<meta charset="utf-8" />
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="index.html" class="hover:text-blue-400 transition-colors">Página Inicial</a>
+          <a href="index.html#projetos" class="text-blue-400 font-semibold">Projetos</a>
+          <a href="curriculo.html" class="hover:text-emerald-400 transition-colors">Currículo</a>
+        </nav>
 
-		<!-- Responsividade: funciona em mobile, tablet e desktop -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <div class="flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700">
+            <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+          </button>
+          <a href="index.html#projetos" class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium border border-slate-700">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            <span>Voltar aos Projetos</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-		<!-- CSS do template Editorial (layout, tipografia, componentes) -->
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+  <main class="flex-1 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-purple-500/10 text-purple-400 text-xs font-semibold px-3 py-1 rounded-full border border-purple-500/20">Supply Chain Operations</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">Power BI</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">Excel Avançado</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">SQL</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+          Otimização Logística, Ocupação de Frotas &amp; Fretes
+        </h1>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Cockpit de inteligência logística desenvolvido para monitorar rotas de transferência, otimização da capacidade de carga de veículos, custos de frete por tonelada e prazos de entrega em malha frigorificada/industrial.
+        </p>
+      </div>
 
-	<!--
-	    is-preload: o JavaScript (main.js) remove essa classe após o
-	    carregamento completo. Enquanto ela existe, animações de entrada
-	    são suprimidas para evitar flashes de conteúdo mal-formatado.
-	-->
-	<body class="is-preload">
+      <div class="glass-card rounded-2xl p-2 border border-slate-800 overflow-hidden shadow-2xl">
+        <img src="images/dash_logistica.png" alt="Otimização Logística" class="w-full h-auto rounded-xl object-cover">
+      </div>
 
-		<!-- WRAPPER: container pai que abriga main + sidebar lado a lado -->
-		<div id="wrapper">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-1">Ocupação da Frota</span>
+          <p class="text-2xl font-bold text-slate-100">92.4%</p>
+          <p class="text-xs text-slate-400 mt-1">Eficiência de cubagem mantida</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-1">Custo Frete/Ton</span>
+          <p class="text-2xl font-bold text-slate-100">-11.5%</p>
+          <p class="text-xs text-slate-400 mt-1">Redução no custo por tonelada transportada</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">SLA de Entrega</span>
+          <p class="text-2xl font-bold text-slate-100">98.1%</p>
+          <p class="text-xs text-slate-400 mt-1">Cumprimento rigoroso de prazos</p>
+        </div>
+      </div>
 
-			<!-- ÁREA PRINCIPAL: conteúdo do projeto (coluna maior) -->
-			<div id="main">
-				<div class="inner">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8 space-y-8">
+          <div class="glass-card p-8 rounded-2xl border border-slate-800 space-y-4">
+            <h2 class="text-xl font-bold text-slate-100 flex items-center gap-2">
+              <span class="material-symbols-outlined text-purple-400">local_shipping</span>
+              Desafio Logístico &amp; Estratégia de Dados
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              O gerenciamento de transportes em cadeias de suprimentos exige controle minucioso sobre viagens com subaproveitamento de espaço útil. O dashboard agrega informações operacionais das frotas dedicadas e terceirizadas, permitindo renegociações de tabelas de frete baseadas em dados históricos de volumetria.
+            </p>
+          </div>
+        </div>
 
-					<!-- CABEÇALHO PADRÃO DO SITE -->
-					<!--
-					    Este bloco é IDÊNTICO em todas as páginas do portfólio.
-					    É a "identidade visual" consistente: o visitante sempre
-					    sabe onde está (portfólio do Fabrício Silva).
-					    O logo é um link que volta para a página inicial.
-					-->
-					<header id="header">
-						<a href="index.html" class="logo"><strong>Fabrício Silva</strong> | Analista de Dados &amp; Suprimentos</a>
-						<ul class="icons">
-							<!-- LinkedIn: abre em nova aba (target="_blank") -->
-							<li><a href="https://www.linkedin.com/in/compradorfabriciosilva/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<!-- GitHub: repositório com os projetos de código -->
-							<li><a href="https://github.com/Fabricio-O-S" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</header>
+        <div class="lg:col-span-4 space-y-6">
+          <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 class="text-base font-bold text-slate-100 border-b border-slate-800 pb-3">Informações do Projeto</h3>
+            <div class="text-xs space-y-3 text-slate-300">
+              <div>
+                <span class="text-slate-500 block">Área</span>
+                <strong class="text-slate-200">Logística &amp; Transportes</strong>
+              </div>
+              <div>
+                <span class="text-slate-500 block">Ferramentas</span>
+                <strong class="text-slate-200">Power BI, Excel, SQL</strong>
+              </div>
+              <div>
+                <span class="text-slate-500 block">Status</span>
+                <span class="inline-block bg-emerald-500/10 text-emerald-400 font-semibold px-2 py-0.5 rounded">Concluído</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-					<!-- SEÇÃO DE CONTEÚDO DO PROJETO DE LOGÍSTICA -->
-					<section>
+    </div>
+  </main>
 
-						<!-- TÍTULO PRINCIPAL H1 -->
-						<!--
-						    class="main" no header = estilo de maior destaque do template
-						    Boas práticas: use apenas 1 <h1> por página (regra de SEO)
-						-->
-						<header class="main">
-							<h1>Dashboard Logística — Desempenho Operacional</h1>
-						</header>
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>&copy; 2026 Fabrício Silva. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-slate-200">Página Inicial</a>
+        <a href="index.html#projetos" class="hover:text-slate-200">Projetos</a>
+        <a href="curriculo.html" class="hover:text-slate-200">Currículo</a>
+      </div>
+    </div>
+  </footer>
 
-						<!-- IMAGEM DE DESTAQUE DO PROJETO -->
-						<!--
-						    REVISÃO DOS CONCEITOS DE CSS INLINE APLICADOS:
-
-						    No elemento <span> (container da imagem):
-						    - width: 100%            → largura total da coluna
-						    - height: 500px          → altura sempre 500px
-						    - display: block         → ocupa a própria linha (sem inline)
-						    - margin: 0 auto 2em auto → centrado, 2em de espaço embaixo
-
-						    No elemento <img> (imagem em si):
-						    - width/height: 100%     → preenche o container
-						    - object-fit: cover      → mantém proporção sem distorcer
-						    - object-position: top   → prioriza mostrar o topo (header do dash)
-						    - border-radius: 8px     → cantos levemente arredondados
-						-->
-						<span class="image main" style="width: 100%; height: 500px; margin: 0 auto 2em auto; display: block;"><img src="images/dash_logistica.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 8px;" /></span>
-
-						<!-- DESCRIÇÃO DO PROJETO -->
-						<h2>Visão Geral do Projeto</h2>
-						<p>Painel de Controle focado estritamente no desempenho operacional de frotas e logística. O projeto analisa minunciosamente os tempos de entrega (SLA), a roteirização, os motivos exatos que levam a devoluções de mercadorias no momento da entrega, e como estas oscilações impactam as métricas financeiras associadas aos fretes.</p>
-
-						<!-- RESULTADOS QUANTITATIVOS DO PROJETO -->
-						<!--
-						    Apresentar números concretos é ESSENCIAL em um portfólio.
-						    Recrutadores e gestores querem ver impacto mensurável.
-						    "Melhora a logística" é vago. "53% on-time → meta de 85%" é preciso.
-						-->
-						<h2>Resultados Principais</h2>
-						<ul>
-							<!-- KPI 1: Volume total de operações analisadas -->
-							<li><strong>Volume Movimentado:</strong> 8.026 ordens de frete totais no período de análise, indicando um crescimento na operação de +3.1%.</li>
-
-							<!-- KPI 2: Taxa de entregas no prazo (On-Time Delivery) -->
-							<li><strong>Nível de Serviço (On-Time):</strong> 53.03% das entregas realizadas dentro da janela de compromisso com o cliente.</li>
-
-							<!-- KPI 3: Taxa de atraso — oportunidade de melhoria -->
-							<li><strong>Atrasos:</strong> 46.97% das entregas sofrem variação de aderência, algo passível de atuação através dos faróis de alerta implantados no dashboard.</li>
-
-							<!-- KPI 4: Principal causa raiz dos problemas -->
-							<li><strong>Ofensores:</strong> A análise demonstrou que grande parte do passivo na logística reversa e devolução tem sido o motivo de "Desistência do cliente".</li>
-						</ul>
-
-						<!-- METODOLOGIA E TÉCNICA USADA -->
-						<!--
-						    TERMOS DO SETOR LOGÍSTICO MENCIONADOS:
-						    - Modal: meio de transporte (rodoviário, ferroviário, aéreo...)
-						    - Transportadora: empresa terceirizada que faz o frete
-						    - SLA (Service Level Agreement): prazo contratado para entrega
-						    - Logística reversa: processo de devolução do cliente → empresa
-						    - Roteirização: otimização das rotas de entrega
-						-->
-						<h2>Construção e Análise em Dados</h2>
-						<p>O foco total durante a construção deste MVP no <strong>Power BI</strong> foi dar ao controlador de tráfego, ou gestor logístico, os "insights sobre a eficiência da frota". Ao navegar nos filtros é possível cruzar, por exemplo, o tipo de caminhão associado às maiores taxas de atraso, o que em base de dados de transportadoras revela o desgaste dos modais ou a capacidade de absorção volumétrica subutilizada.</p>
-
-						<!--
-						    MVP = Minimum Viable Product (Produto Mínimo Viável)
-						    Em BI, um MVP de dashboard significa: entregar as visões
-						    mais importantes primeiro, antes de adicionar complexidade.
-						    É uma abordagem ágil: validar o valor antes de expandir.
-						-->
-
-						<!-- LINHA DIVISÓRIA DECORATIVA DO TEMPLATE -->
-						<hr class="major" />
-
-						<!-- =====================================================
-						    LINK PARA O DASHBOARD INTERATIVO
-						    =====================================================
-						    Este projeto usa o padrão de BOTÃO DIRETO (sem iframe),
-						    levando o usuário para o Power BI Service em nova aba.
-
-						    Vantagens desta abordagem:
-						    ✅ Página mais leve (não carrega o iframe)
-						    ✅ Dashboard em tela cheia no Power BI = melhor experiência
-						    ✅ Evita problemas com bloqueio de iframes (X-Frame-Options)
-
-						    Desvantagens:
-						    ❌ Usuário sai da sua página
-						    ❌ Menos "wow factor" comparado ao iframe embutido
-						    ===================================================== -->
-						<h2>Dashboard Interativo</h2>
-						<p>Explore as visões das transportadoras, devoluções e fretes através da publicação web clicando no botão:</p>
-						<ul class="actions">
-							<!--
-							    "button primary large":
-							    primary = cor principal do tema (mais chamativo)
-							    large   = botão maior que o padrão
-							    target="_blank" = abre em nova aba (não abandona a página)
-							-->
-							<li><a href="https://app.powerbi.com/view?r=eyJrIjoiMzE0MWE2M2UtZjYzMi00ZjY2LTgxNWUtNGE5M2Y0ZjM0ZTEwIiwidCI6IjU0YjdjOTcwLTNkZmUtNDYyYS04ZjdmLTc0ODk2MzIzOGY2NyJ9" target="_blank" class="button primary large">Visualizar o Dashboard</a></li>
-						</ul>
-
-					</section>
-				</div>
-			</div>
-
-			<!-- SIDEBAR: barra lateral fixa (coluna da direita) -->
-			<div id="sidebar">
-				<div class="inner">
-
-					<!-- CAMPO DE PESQUISA -->
-					<!--
-					    Por que este campo existe se não tem busca real?
-					    É do template original e serve como "placeholder" visual.
-					    Para implementar busca real precisaria de:
-					    - JavaScript que filtra conteúdo da página (Client-Side Search)
-					    - Ou um backend com banco de dados (Server-Side Search)
-					-->
-					<section id="search" class="alt">
-						<form method="post" action="#">
-							<input type="text" name="query" id="query" placeholder="Pesquisar" />
-						</form>
-					</section>
-
-					<!-- BLOCO DE PERFIL E CONTATOS -->
-					<section style="text-align: center; border-bottom: solid 1px rgba(210, 215, 217, 0.75); padding-bottom: 2em; margin-bottom: 2em;">
-
-						<!-- FOTO DE PERFIL CIRCULAR -->
-						<!--
-						    RESUMO DA TÉCNICA DA FOTO REDONDA:
-						    div com border-radius: 50% + overflow: hidden
-						    = qualquer imagem dentro vira circular
-						    É uma das técnicas CSS mais usadas no mercado.
-						-->
-						<div style="width: 150px; height: 150px; margin: 0 auto 1.5em auto; border-radius: 50%; overflow: hidden; border: 4px solid #1E3A8A; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-							<img src="images/1739905716703.jpg" alt="Fabrício Silva" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-						</div>
-
-						<!-- Nome e especialidade -->
-						<h3 style="margin-bottom: 0.2em;">Fabrício Silva</h3>
-						<p style="font-size: 0.9em; margin-bottom: 2em; color: #7f888f;">Data &amp; Supply Chain Analytics</p>
-
-						<!-- INFORMAÇÕES DE CONTATO -->
-						<!--
-						    Ícones do Font Awesome (fa-*):
-						    - fa-envelope = símbolo de e-mail (envelope)
-						    - fa-phone    = símbolo de telefone
-						    - fa-home     = símbolo de casa/localização
-						    "icon solid" = versão preenchida do ícone
-						    href="mailto:..." = link que abre aplicativo de e-mail
-						-->
-						<ul class="contact" style="text-align: left; margin: 0; padding-top: 1.5em; border-top: solid 1px rgba(210, 215, 217, 0.75);">
-							<li class="icon solid fa-envelope"><a href="mailto:fabricio_la_gnt@hotmail.com">fabricio_la_gnt@hotmail.com</a></li>
-							<li class="icon solid fa-phone">(16) 99106-9995</li>
-							<li class="icon solid fa-home">Sertãozinho - SP</li>
-						</ul>
-					</section>
-
-					<!-- =====================================================
-					    SEÇÃO DE HARD SKILLS (ADICIONADA)
-					    ===================================================== -->
-					<section id="hard-skills" style="padding-top: 0;">
-						<header class="major">
-							<h2>Hard Skills</h2>
-						</header>
-						<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-							<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-							<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
-							<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" alt="Power BI" />
-							<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-							<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-							<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit" />
-							<img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel" />
-						</div>
-					</section>
-
-					<!-- MENU DE NAVEGAÇÃO DO SITE -->
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<!-- Link absoluto: volta para a página inicial -->
-							<li><a href="index.html">Página Inicial</a></li>
-							<!-- Link composto: vai ao index.html E rola até #projetos -->
-							<li><a href="index.html#projetos">Meus Projetos</a></li>
-							<!-- Link pendente: aguarda criar página do currículo -->
-							<li><a href="curriculo.html">Sobre Mim / Currículo</a></li>
-						</ul>
-					</nav>
-
-					<!-- RODAPÉ DA SIDEBAR -->
-					<!-- &copy; = símbolo © de copyright em HTML -->
-					<footer id="footer">
-						<p class="copyright">&copy; Fabrício Silva. Todos os direitos reservados. Portfólio de Data Analytics.</p>
-					</footer>
-
-				</div>
-			</div>
-		</div><!-- Fecha #wrapper: container raiz do template -->
-
-		<!-- =========================================================
-		    IMPORTAÇÃO DOS SCRIPTS JAVASCRIPT
-		    =========================================================
-		    Por que no final do body e não no <head>?
-		    → O HTML é lido de cima para baixo. Scripts no <head>
-		      bloqueiam a renderização até terminarem de carregar.
-		    → No final do body, o usuário já VÊ a página enquanto
-		      os scripts terminam de carregar em background.
-		    Esta é uma prática chamada "script deferral" (adiamento).
-		    =========================================================  -->
-		<script src="assets/js/jquery.min.js"></script>     <!-- Biblioteca jQuery -->
-		<script src="assets/js/browser.min.js"></script>    <!-- Detecção de browser -->
-		<script src="assets/js/breakpoints.min.js"></script><!-- Breakpoints de tela -->
-		<script src="assets/js/util.js"></script>           <!-- Funções utilitárias -->
-		<script src="assets/js/main.js"></script>           <!-- Script principal do template -->
-	</body>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

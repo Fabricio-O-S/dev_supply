@@ -1,285 +1,188 @@
-<!DOCTYPE HTML>
-<!--
-    ============================================================
-    PORTFÓLIO DE DATA ANALYTICS — Fabrício Silva
-    ============================================================
-    Arquivo: projeto_compras.html
-    Função : Página de detalhes do Projeto "Dashboard de Compras"
-    Autor  : Fabrício Silva
-    Template: Editorial by HTML5 UP (html5up.net | @ajlkn)
-    ============================================================
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Compras &amp; Saving | Fabrício Silva</title>
+  
+  <meta name="description" content="Dashboard de Gestão de Compras, Follow-Up de requisições e análise de Saving acumulado por Fabrício Silva.">
+  <meta name="author" content="Fabrício Silva">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#2563eb', emerald: '#059669', dark: '#0f172a', card: '#1e293b' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
 
-    CONCEITO: PÁGINAS INTERNAS (SUBPÁGINAS)
-    Este arquivo é uma "subpágina" do portfólio. Cada projeto
-    tem sua própria página HTML dedicada, com mais detalhes,
-    resultados e o iframe do dashboard interativo.
+  <!-- Google Fonts & Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
 
-    PADRÃO USADO: a estrutura HTML é IDÊNTICA ao index.html
-    (wrapper > main + sidebar). Isso é intencional — manter
-    consistência visual em todo o site (mesma sidebar, mesmo
-    menu, mesmo cabeçalho). Isso se chama "layout consistente".
-    ============================================================
--->
-<html>
-	<head>
-		<!-- TÍTULO DESCRITIVO PARA SEO E ABAS DO NAVEGADOR -->
-		<!--
-		    Boas práticas de título: "Nome do Projeto | Nome do Site"
-		    O Google mostra os primeiros ~60 caracteres nos resultados
-		    de busca. Títulos claros aumentam o CTR (taxa de clique).
-		-->
-		<title>Dashboard de Compras — Follow UP | Portfólio</title>
+  <!-- CABEÇALHO -->
+  <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+            FS
+          </div>
+          <div>
+            <span class="font-bold text-slate-100 text-base block leading-tight group-hover:text-blue-400">Fabrício Silva</span>
+            <span class="text-xs text-slate-400 font-medium block">Data Analytics &amp; Suprimentos</span>
+          </div>
+        </a>
 
-		<!-- CHARSET: garante acentos e caracteres especiais do pt-BR -->
-		<meta charset="utf-8" />
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="index.html" class="hover:text-blue-400 transition-colors">Página Inicial</a>
+          <a href="index.html#projetos" class="text-blue-400 font-semibold">Projetos</a>
+          <a href="curriculo.html" class="hover:text-emerald-400 transition-colors">Currículo</a>
+        </nav>
 
-		<!-- RESPONSIVIDADE: adapta o layout para mobile/tablet -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <div class="flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700">
+            <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+          </button>
+          <a href="index.html#projetos" class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium border border-slate-700">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            <span>Voltar aos Projetos</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-		<!-- CSS DO TEMPLATE: importa todos os estilos visuais -->
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+  <!-- SEÇÃO PRINCIPAL -->
+  <main class="flex-1 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- CABEÇALHO DO PROJETO -->
+      <div class="space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/20">Supply Chain &amp; Sourcing</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">Power BI</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">ERP TOTVS</span>
+          <span class="bg-slate-800 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">Strategic Sourcing</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+          Gestão de Compras, Follow-up &amp; Saving Acumulado
+        </h1>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Cockpit de inteligência operacional desenvolvido para acompanhamento de ordens de compra, tempo médio de atendimento (Lead Time), performance de pontualidade de fornecedores (OTIF) e saving negociado.
+        </p>
+      </div>
 
-	<!-- is-preload: classe temporária enquanto a página carrega -->
-	<body class="is-preload">
+      <!-- IMAGEM DE CAPA COM GLASS EFFECT -->
+      <div class="glass-card rounded-2xl p-2 border border-slate-800 overflow-hidden shadow-2xl">
+        <img src="images/dash_compras.png" alt="Dashboard de Compras" class="w-full h-auto rounded-xl object-cover">
+      </div>
 
-		<!-- CONTAINER RAIZ DO TEMPLATE EDITORIAL -->
-		<div id="wrapper">
+      <!-- METRICAS DE IMPACTO -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">Saving Total</span>
+          <p class="text-2xl font-bold text-slate-100">R$ 1.2M+</p>
+          <p class="text-xs text-slate-400 mt-1">Economia obtida via negociação técnica</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-1">Lead Time Médio</span>
+          <p class="text-2xl font-bold text-slate-100">4.2 Dias</p>
+          <p class="text-xs text-slate-400 mt-1">Redução expressiva no tempo de atendimento</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+          <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-1">OTIF Fornecedores</span>
+          <p class="text-2xl font-bold text-slate-100">94.5%</p>
+          <p class="text-xs text-slate-400 mt-1">Entregas no prazo e nas especificações</p>
+        </div>
+      </div>
 
-			<!-- =====================================================
-			    COLUNA PRINCIPAL — Conteúdo do projeto
-			    ===================================================== -->
-			<div id="main">
-				<div class="inner">
+      <!-- CONTEÚDO TÉCNICO -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8 space-y-8">
+          <div class="glass-card p-8 rounded-2xl border border-slate-800 space-y-4">
+            <h2 class="text-xl font-bold text-slate-100 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-400">inventory</span>
+              Contexto Operacional &amp; Arquitetura
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              No setor de suprimentos corporativos, a falta de visibilidade centralizada entre requisição, cotação e emissão de pedido gera gargalos de abastecimento em filiais. Esta aplicação consolida dados extraídos do sistema ERP, catalogando compras diretas e indiretas.
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Com o rastreamento em tempo real do status de cada ordem, compradores e gestores obtêm alertas automáticos sobre pedidos em atraso e divergências nos valores orçados.
+            </p>
+          </div>
 
-					<!-- CABEÇALHO (igual em todas as páginas do portfólio) -->
-					<!--
-					    CONCEITO DE REUTILIZAÇÃO: perceba como o header é
-					    copiado do index.html. Isso garante que o usuário
-					    veja sempre o mesmo topo, independente da página.
-					    Em projetos maiores, ferramentas como React, Vue ou
-					    templates Jinja2 permitem definir o header UMA vez
-					    e incluí-lo automaticamente. Por ora, em HTML puro,
-					    copiamos e colamos (e atualizamos uma vez = atualiza todos).
-					-->
-					<header id="header">
-						<!-- Links relativos voltam para o index.html (página inicial) -->
-						<a href="index.html" class="logo"><strong>Fabrício Silva</strong> | Analista de Dados &amp; Suprimentos</a>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/compradorfabriciosilva/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Fabricio-O-S" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</header>
+          <div class="glass-card p-8 rounded-2xl border border-slate-800 space-y-4">
+            <h2 class="text-xl font-bold text-slate-100 flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-400">insights</span>
+              Indicadores Chave &amp; Métricas DAX
+            </h2>
+            <div class="bg-slate-950 p-4 rounded-xl font-mono text-xs text-emerald-300 border border-slate-800 overflow-x-auto">
+              <code>
+// Cálculo de OTIF (On-Time In-Full)<br>
+OTIF_% = DIVIDE(<br>
+&nbsp;&nbsp;CALCULATE(COUNT(fPedidos[ID_Pedido]), fPedidos[NoPrazo] = TRUE, fPedidos[SemDivergencia] = TRUE),<br>
+&nbsp;&nbsp;COUNT(fPedidos[ID_Pedido]), 0<br>
+)
+              </code>
+            </div>
+          </div>
+        </div>
 
-					<!-- =====================================================
-					    SEÇÃO PRINCIPAL: Conteúdo do projeto de Compras
-					    =====================================================
-					    <section> sem id específico — é o bloco de conteúdo
-					    único desta página. Cada projeto tem seu próprio HTML.
-					    ===================================================== -->
-					<section>
+        <div class="lg:col-span-4 space-y-6">
+          <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 class="text-base font-bold text-slate-100 border-b border-slate-800 pb-3">Informações do Projeto</h3>
+            <div class="text-xs space-y-3 text-slate-300">
+              <div>
+                <span class="text-slate-500 block">Área</span>
+                <strong class="text-slate-200">Suprimentos &amp; Strategic Sourcing</strong>
+              </div>
+              <div>
+                <span class="text-slate-500 block">Tecnologias</span>
+                <strong class="text-slate-200">Power BI, ERP TOTVS, Python, DAX</strong>
+              </div>
+              <div>
+                <span class="text-slate-500 block">Status</span>
+                <span class="inline-block bg-emerald-500/10 text-emerald-400 font-semibold px-2 py-0.5 rounded">Em Produção</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-						<!-- TÍTULO DA PÁGINA -->
-						<!--
-						    class="main" no <header> = o maior estilo de título
-						    disponível no template Editorial. Cria um h1 grande
-						    com uma linha decorativa embaixo.
-						-->
-						<header class="main">
-							<h1>Dashboard de Compras — Follow UP</h1>
-						</header>
+    </div>
+  </main>
 
-						<!-- IMAGEM DE CAPA DO PROJETO -->
-						<!--
-						    CONCEITO: "image main" é uma classe do template Editorial
-						    para exibir uma imagem em destaque em largura total.
+  <!-- RODAPÉ -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>&copy; 2026 Fabrício Silva. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-slate-200">Página Inicial</a>
+        <a href="index.html#projetos" class="hover:text-slate-200">Projetos</a>
+        <a href="curriculo.html" class="hover:text-slate-200">Currículo</a>
+      </div>
+    </div>
+  </footer>
 
-						    CSS INLINE APLICADO:
-						    - width: 100%           → ocupa toda a largura disponível
-						    - height: 500px         → altura fixa de 500 pixels
-						    - display: block        → garante que o elemento ocupe sua
-						                             própria linha (sem texto ao lado)
-						    - margin: 0 auto 2em auto → centraliza o elemento e adiciona
-						                             espaço abaixo (2em ≈ 2× tamanho de fonte)
-
-						    NA IMAGEM INTERNA:
-						    - object-fit: cover      → preenche o espaço sem distorcer
-						    - object-position: top center → mostra o topo da imagem
-						                               (importante quando a imagem é cortada)
-						    - border-radius: 8px     → borda arredondada (canto suavizado)
-						-->
-						<span class="image main" style="width: 100%; height: 500px; margin: 0 auto 2em auto; display: block;"><img src="images/dash_compras.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 8px;" /></span>
-
-						<!-- =====================================================
-						    DESCRIÇÃO DO PROJETO
-						    ===================================================== -->
-						<h2>Visão Geral do Projeto</h2>
-						<p>Um dashboard estratégico para monitoramento de ordens de compra e desempenho da equipe de suprimentos. Este projeto consolida dados operacionais em indicadores claros e visuais dinâmicos, cobrindo todo o ciclo de compras, desde o status da requisição até a entrega final no estoque ou usuário.</p>
-
-						<!-- LISTA DOS INDICADORES (KPIs) DO PROJETO -->
-						<!--
-						    <ul> = lista não ordenada (com bullets/pontos)
-						    <li> = item da lista
-						    <strong> = negrito para destacar o nome de cada KPI
-						-->
-						<h2>Principais Indicadores</h2>
-						<ul>
-							<li><strong>Follow-Up Automático:</strong> Acompanhamento de pedidos pendentes em tempo real (ex: verificação de 374 ordens aguardando entrega no momento de validação).</li>
-							<li><strong>Performance de Fornecedores:</strong> Avaliação de atrasos, entregas no prazo e conformidade de qualidade.</li>
-							<li><strong>Status Operacional (Pipeline):</strong> Visão de todas as etapas (aberto, aprovado, pedido gerado, em trânsito) permitindo atuar nos gargalos do Supply Chain antes que faltem produtos.</li>
-						</ul>
-
-						<h2>Construção e Ferramentas Utilizadas</h2>
-						<p>O projeto foi inteiramente construído utilizando modelagem de dados dentro do <strong>Power BI</strong> e <strong>Power Query</strong> para garantir que as atualizações de saídas extraídas de planilhas locais e sistemas legados sejam limpas e apresentadas sem erro. Foram implementadas fórmulas <strong>DAX</strong> de métricas de tempo de chumbo (Lead Time) e inteligência de tempo.</p>
-
-						<!-- DIVISOR HORIZONTAL ESTILIZADO -->
-						<!--
-						    <hr> = "horizontal rule" = linha divisória
-						    class="major" = versão estilizada do template
-						    (linha mais espessa e com margens mais generosas)
-						-->
-						<hr class="major" />
-
-						<!-- =====================================================
-						    DASHBOARD INTERATIVO EMBARCADO (IFRAME)
-						    =====================================================
-						    CONCEITO: <iframe> (Inline Frame)
-						    Um iframe é uma "janela" dentro da página que carrega
-						    OUTRO site/URL dentro dela. É assim que o Power BI
-						    é incorporado: o dashboard fica hospedado nos servidores
-						    da Microsoft, e exibimos ele aqui via iframe.
-
-						    TÉCNICA DO "ASPECT RATIO 16:9" COM CSS:
-						    O problema de iframes é que não sabemos a altura exata.
-						    A técnica abaixo mantém a proporção 16:9 em qualquer tela:
-
-						    1. div pai com:
-						       - position: relative    → os filhos se posicionam em relação a ele
-						       - padding-bottom: 56.25% → 9/16 = 0.5625 = 56.25% (proporção 16:9!)
-						       - height: 0             → a altura "real" vem do padding
-						    2. iframe filho com:
-						       - position: absolute    → sai do fluxo normal
-						       - top: 0; left: 0       → cola no canto superior esquerdo do pai
-						       - width: 100%; height: 100% → preenche todo o pai
-						    ===================================================== -->
-						<h2>Dashboard Interativo</h2>
-						<p>Sinta-se à vontade para navegar nos filtros e ver os indicadores mudarem em tempo real, interagindo diretamente com o relatório abaixo:</p>
-
-						<!-- Container pai: define a "caixa" e mantém a proporção 16:9 -->
-						<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; margin-bottom: 2em; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-							<!--
-							    IFRAME DO POWER BI:
-							    - title="..."         → obrigatório para acessibilidade
-							    - src="..."           → URL de incorporação do Power BI Service
-							    - frameborder="0"     → remove a borda padrão do iframe
-							    - allowFullScreen     → permite o usuário abrir em tela cheia
-							    A URL longa no src= é gerada pelo Power BI ao publicar o dashboard.
-							    Cada "?r=eyJ..." único identifica aquele relatório específico.
-							-->
-							<iframe title="Follow UP - White Version" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://app.powerbi.com/view?r=eyJrIjoiZjY3NjJkMWEtMTdlMi00ZDc2LTg2NTAtMjA3ZTc1MmUwYWNjIiwidCI6IjU0YjdjOTcwLTNkZmUtNDYyYS04ZjdmLTc0ODk2MzIzOGY2NyJ9" frameborder="0" allowFullScreen="true"></iframe>
-						</div>
-
-						<!-- BOTÃO PARA ABRIR EM NOVA ABA -->
-						<!--
-						    Sempre ofereça uma forma de abrir o dashboard fora do iframe.
-						    Algumas bloqueiam iframes de outros domínios (política CORS).
-						    target="_blank" abre em nova aba para não perder a página atual.
-						    class="button primary large" = botão grande, cor de destaque
-						-->
-						<ul class="actions">
-							<li><a href="https://app.powerbi.com/view?r=eyJrIjoiZjY3NjJkMWEtMTdlMi00ZDc2LTg2NTAtMjA3ZTc1MmUwYWNjIiwidCI6IjU0YjdjOTcwLTNkZmUtNDYyYS04ZjdmLTc0ODk2MzIzOGY2NyJ9" target="_blank" class="button primary large">Abrir Dashboard em Nova Guia</a></li>
-						</ul>
-
-					</section>
-				</div>
-			</div>
-
-			<!-- =====================================================
-			    SIDEBAR — Idêntica ao index.html
-			    =====================================================
-			    Em HTML puro, a sidebar é copiada em cada página.
-			    Pense nela como o "menu lateral" permanente do site.
-			    ===================================================== -->
-			<div id="sidebar">
-				<div class="inner">
-
-					<!-- Campo de busca (decorativo, sem backend) -->
-					<section id="search" class="alt">
-						<form method="post" action="#">
-							<input type="text" name="query" id="query" placeholder="Pesquisar" />
-						</form>
-					</section>
-
-					<!-- Perfil: foto circular + nome + contatos -->
-					<section style="text-align: center; border-bottom: solid 1px rgba(210, 215, 217, 0.75); padding-bottom: 2em; margin-bottom: 2em;">
-						<!-- Foto de perfil circular com borda azul -->
-						<div style="width: 150px; height: 150px; margin: 0 auto 1.5em auto; border-radius: 50%; overflow: hidden; border: 4px solid #1E3A8A; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-							<img src="images/1739905716703.jpg" alt="Fabrício Silva" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-						</div>
-						<h3 style="margin-bottom: 0.2em;">Fabrício Silva</h3>
-						<p style="font-size: 0.9em; margin-bottom: 2em; color: #7f888f;">Data &amp; Supply Chain Analytics</p>
-
-						<!-- Info de contato com ícones Font Awesome -->
-						<ul class="contact" style="text-align: left; margin: 0; padding-top: 1.5em; border-top: solid 1px rgba(210, 215, 217, 0.75);">
-							<li class="icon solid fa-envelope"><a href="mailto:fabricio_la_gnt@hotmail.com">fabricio_la_gnt@hotmail.com</a></li>
-							<li class="icon solid fa-phone">(16) 99106-9995</li>
-							<li class="icon solid fa-home">Sertãozinho - SP</li>
-						</ul>
-					</section>
-
-					<!-- =====================================================
-					    SEÇÃO DE HARD SKILLS (ADICIONADA)
-					    ===================================================== -->
-					<section id="hard-skills" style="padding-top: 0;">
-						<header class="major">
-							<h2>Hard Skills</h2>
-						</header>
-						<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-							<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-							<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
-							<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" alt="Power BI" />
-							<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-							<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-							<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit" />
-							<img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel" />
-						</div>
-					</section>
-
-					<!-- Menu de navegação -->
-					<!--
-					    ATENÇÃO: nas subpáginas, o link "Meus Projetos" aponta
-					    para "index.html#projetos" ao invés de apenas "#projetos".
-					    Isso é necessário porque estamos em outra página,
-					    então precisamos voltar ao index.html E depois rolar até
-					    a seção com id="projetos".
-					-->
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="index.html">Página Inicial</a></li>
-							<!-- "index.html#projetos" = volta à home E rola para a seção projetos -->
-							<li><a href="index.html#projetos">Meus Projetos</a></li>
-							<li><a href="curriculo.html">Sobre Mim / Currículo</a></li>
-						</ul>
-					</nav>
-
-					<!-- Rodapé da sidebar -->
-					<footer id="footer">
-						<p class="copyright">&copy; Fabrício Silva. Todos os direitos reservados. Portfólio de Data Analytics.</p>
-					</footer>
-
-				</div>
-			</div>
-		</div><!-- Fecha #wrapper -->
-
-		<!-- SCRIPTS: carregados no final para melhor performance -->
-		<!-- Ordem importa: jQuery deve vir antes dos que dependem dele -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

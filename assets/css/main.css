@@ -1,10 +1,35 @@
-﻿@import url(fontawesome-all.min.css);
+@import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+:root {
+	--bg-main: #ffffff;
+	--bg-sidebar: #f5f6f7;
+	--text-main: #7f888f;
+	--text-header: #3d4449;
+	--text-strong: #3d4449;
+	--accent: #1E3A8A;
+	--accent-hover: rgba(30, 58, 138, 0.05);
+	--border: rgba(210, 215, 217, 0.75);
+	--border-alt: rgba(230, 235, 237, 0.25);
+}
+
+body.dark-mode {
+	--bg-main: #1b1e23;
+	--bg-sidebar: #15181c;
+	--text-main: #aeb4b9;
+	--text-header: #ffffff;
+	--text-strong: #ffffff;
+	--accent: #4a90e2;
+	--accent-hover: rgba(74, 144, 226, 0.15);
+	--border: rgba(255, 255, 255, 0.1);
+	--border-alt: rgba(255, 255, 255, 0.05);
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -78,7 +103,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #ffffff; }
+  background: var(--bg-main); }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -91,7 +116,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: #7f888f;
+  color: var(--text-main);
   font-family: "Open Sans", sans-serif;
   font-size: 13pt;
   font-weight: 400;
@@ -112,7 +137,7 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #1E3A8A;
+  color: var(--accent);
   text-decoration: none; }
   a:hover {
     border-bottom-color: #1E3A8A;
@@ -121,7 +146,7 @@ a {
       color: inherit; }
 
 strong, b {
-  color: #3d4449;
+  color: var(--text-strong);
   font-weight: 600; }
 
 em, i {
@@ -131,7 +156,7 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #3d4449;
+  color: var(--text-header);
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.5;
@@ -1446,11 +1471,11 @@ table {
   margin: 0 0 2em 0;
   width: 100%; }
   table tbody tr {
-    border: solid 1px rgba(210, 215, 217, 0.75);
+    border: solid 1px var(--border);
     border-left: 0;
     border-right: 0; }
     table tbody tr:nth-child(2n + 1) {
-      background-color: rgba(230, 235, 237, 0.25); }
+      background-color: var(--border-alt); }
   table td {
     padding: 0.75em 0.75em; }
   table th {
@@ -1460,13 +1485,13 @@ table {
     padding: 0 0.75em 0.75em 0.75em;
     text-align: left; }
   table thead {
-    border-bottom: solid 2px rgba(210, 215, 217, 0.75); }
+    border-bottom: solid 2px var(--border); }
   table tfoot {
-    border-top: solid 2px rgba(210, 215, 217, 0.75); }
+    border-top: solid 2px var(--border); }
   table.alt {
     border-collapse: separate; }
     table.alt tbody tr td {
-      border: solid 1px rgba(210, 215, 217, 0.75);
+      border: solid 1px var(--border);
       border-left-width: 0;
       border-top-width: 0; }
       table.alt tbody tr td:first-child {
@@ -1582,7 +1607,7 @@ button,
 
 /* Mini Posts */
 .mini-posts article {
-  border-top: solid 1px rgba(210, 215, 217, 0.75);
+  border-top: solid 1px var(--border);
   margin-top: 2em;
   padding-top: 2em; }
   .mini-posts article .image {
@@ -1652,7 +1677,7 @@ button,
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
         border-radius: 0.25rem;
-        border: solid 2px rgba(210, 215, 217, 0.75);
+        border: solid 2px var(--border);
         content: '';
         display: block;
         height: 7em;
@@ -1748,7 +1773,7 @@ button,
     position: relative;
     width: calc(33.33333% - 6em); }
     .posts article:before {
-      background: rgba(210, 215, 217, 0.75);
+      background: var(--border);
       content: '';
       display: block;
       height: calc(100% + 6em);
@@ -1757,7 +1782,7 @@ button,
       top: 0;
       width: 1px; }
     .posts article:after {
-      background: rgba(210, 215, 217, 0.75);
+      background: var(--border);
       bottom: -3em;
       content: '';
       display: block;
@@ -1860,7 +1885,7 @@ button,
     max-width: 110em; }
     #main > .inner > section {
       padding: 6em 0 4em 0 ;
-      border-top: solid 2px rgba(210, 215, 217, 0.75); }
+      border-top: solid 2px var(--border); }
       #main > .inner > section:first-of-type {
         border-top: 0 !important; }
   @media screen and (max-width: 1680px) {
@@ -1928,7 +1953,7 @@ button,
   -webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  background-color: #f5f6f7;
+  background-color: var(--bg-sidebar);
   font-size: 0.9em;
   position: relative;
   width: 26em; }
@@ -1939,7 +1964,7 @@ button,
     position: relative;
     width: 26em; }
     #sidebar > .inner > * {
-      border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+      border-bottom: solid 2px var(--border);
       margin: 0 0 3.5em 0;
       padding: 0 0 3.5em 0; }
       #sidebar > .inner > * > :last-child {
@@ -2254,7 +2279,7 @@ button,
         transform: rotate(-180deg); }
 
 #menu > ul > li {
-  border-top: solid 1px rgba(210, 215, 217, 0.75);
+  border-top: solid 1px var(--border);
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0; }
   #menu > ul > li > ul {
@@ -2271,3 +2296,43 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--border-alt);
+	border: 1px solid var(--border);
+	transition: all 0.3s ease;
+	margin-right: 1.5em;
+	color: var(--accent);
+}
+
+.theme-toggle-btn:hover {
+	transform: perspective(1px) scale(1.1);
+	background: var(--accent-hover);
+}
+
+.theme-toggle-btn .sun-icon { display: none; }
+.theme-toggle-btn .moon-icon { display: block; }
+
+body.dark-mode .theme-toggle-btn .sun-icon { display: block; }
+body.dark-mode .theme-toggle-btn .moon-icon { display: none; }
+
+body.dark-mode .theme-toggle-btn {
+	background: #2a2d31;
+	color: #f1c40f;
+}
+
+@media screen and (max-width: 736px) {
+	.theme-toggle-btn {
+		margin-right: 0.5em;
+		width: 35px;
+		height: 35px;
+	}
+}

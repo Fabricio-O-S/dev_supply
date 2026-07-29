@@ -1,83 +1,110 @@
 /* ==========================================================================
-   PORTFÓLIO EXECUTIVO – FABRÍCIO SILVA (DATA ANALYTICS & SUPPLY CHAIN)
-   Estilos Customizados & Componentes Finos (Complementar ao Tailwind CSS)
+   PORTFÓLIO OBSIDIAN GLASS 2.0 – FABRÍCIO SILVA
+   Design Executivo Fixo (Dark Premium) & Componentes Bioluminescentes
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg-primary: #0f172a;
-  --bg-card: #1e293b;
+  --bg-dark: #090d16;
+  --bg-card: #111827;
+  --bg-card-hover: #1f293d;
+  --border-glow: rgba(59, 130, 246, 0.25);
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-emerald: #10b981;
+  --accent-purple: #a855f7;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --accent-blue: #3b82f6;
-  --accent-emerald: #10b981;
-  --border-color: #334155;
-}
-
-.light-mode {
-  --bg-primary: #f8fafc;
-  --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --accent-blue: #2563eb;
-  --accent-emerald: #059669;
-  --border-color: #e2e8f0;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
 }
 
-/* Glassmorphism Card Style */
-.glass-card {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+/* Glassmorphism 2.0 Card Style */
+.obsidian-card {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.light-mode .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+.obsidian-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15);
+  transform: translateY(-3px);
 }
 
-/* Custom Gradient Accents */
-.gradient-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+.obsidian-card-emerald:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
+}
+
+.obsidian-card-purple:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.15);
+}
+
+/* Custom Gradient Text */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-bg-blue {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.gradient-bg-emerald {
-  background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Animations & Transitions */
-.card-hover {
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+/* Glowing Badges & Elements */
+.glow-badge-blue {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #93c5fd;
 }
 
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.3);
+.glow-badge-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #6ee7b7;
 }
 
-.light-mode .card-hover:hover {
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+.glow-badge-purple {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
 }
 
-/* Project Filter Active State */
-.filter-btn.active {
-  background-color: #3b82f6;
+/* Tab Switcher Styling */
+.pillar-tab-btn.active {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
   color: #ffffff;
+  border-color: #60a5fa;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+}
+
+.pillar-tab-btn-emerald.active {
+  background: linear-gradient(135deg, #064e3b 0%, #059669 100%);
+  color: #ffffff;
+  border-color: #34d399;
+  box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.39);
 }
 
 /* Scrollbar Custom */
@@ -85,15 +112,12 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-.light-mode ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #090d16;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #1f293d;
   border-radius: 4px;
 }
-.light-mode ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
 }

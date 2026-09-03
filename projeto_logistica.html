@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Otimização Logística &amp; Controle de Frete | Fabrício Silva</title>
   
   <meta name="description" content="Dashboard de Otimização Logística e controle de custos de frete por tonelada desenvolvido por Fabrício Silva.">
@@ -15,10 +16,8 @@
       darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            brand: { blue: '#2563eb', emerald: '#059669', dark: '#0f172a', card: '#1e293b' }
-          },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
+          colors: { brand: { dark: '#090d16', card: '#111827', blue: '#2563eb', emerald: '#059669', purple: '#7c3aed' } },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] }
         }
       }
     }
@@ -26,19 +25,19 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
 
   <!-- CABEÇALHO -->
-  <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+  <header class="sticky top-0 z-50 bg-[#090d16]/85 backdrop-blur-xl border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+      <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3.5 group">
           <img src="images/1739905716703.jpg" alt="Fabrício Silva" class="w-11 h-11 rounded-xl object-cover border border-slate-700/80 shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
           <div>
@@ -47,18 +46,14 @@
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
           <a href="index.html" class="hover:text-blue-400 transition-colors">Página Inicial</a>
-          <a href="index.html#projetos" class="text-blue-400 font-semibold">Projetos</a>
-          <a href="curriculo.html" class="hover:text-emerald-400 transition-colors">Currículo</a>
+          <a href="index.html#projetos" class="text-blue-400 font-bold">Projetos</a>
+          <a href="curriculo.html" class="hover:text-emerald-400 transition-colors">Trajetória Separada</a>
         </nav>
 
         <div class="flex items-center gap-3">
-          <button class="theme-toggle-btn p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700">
-            <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
-            <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
-          </button>
-          <a href="index.html#projetos" class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium border border-slate-700">
+          <a href="index.html#projetos" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl text-xs font-bold border border-slate-700">
             <span class="material-symbols-outlined text-base">arrow_back</span>
             <span>Voltar aos Projetos</span>
           </a>
@@ -85,22 +80,22 @@
         </p>
       </div>
 
-      <div class="glass-card rounded-2xl p-2 border border-slate-800 overflow-hidden shadow-2xl">
-        <img src="images/dash_logistica.png" alt="Otimização Logística" class="w-full h-auto rounded-xl object-cover">
+      <div class="obsidian-card rounded-3xl p-2 border border-slate-800 overflow-hidden shadow-2xl">
+        <img src="images/dash_logistica.png" alt="Otimização Logística" class="w-full h-auto rounded-2xl object-cover">
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+        <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
           <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-1">Ocupação da Frota</span>
           <p class="text-2xl font-bold text-slate-100">92.4%</p>
           <p class="text-xs text-slate-400 mt-1">Eficiência de cubagem mantida</p>
         </div>
-        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+        <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
           <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-1">Custo Frete/Ton</span>
           <p class="text-2xl font-bold text-slate-100">-11.5%</p>
           <p class="text-xs text-slate-400 mt-1">Redução no custo por tonelada transportada</p>
         </div>
-        <div class="glass-card p-6 rounded-2xl border border-slate-800">
+        <div class="obsidian-card p-6 rounded-2xl border border-slate-800">
           <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">SLA de Entrega</span>
           <p class="text-2xl font-bold text-slate-100">98.1%</p>
           <p class="text-xs text-slate-400 mt-1">Cumprimento rigoroso de prazos</p>
@@ -109,7 +104,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-8 space-y-8">
-          <div class="glass-card p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="obsidian-card p-8 rounded-3xl border border-slate-800 space-y-4">
             <h2 class="text-xl font-bold text-slate-100 flex items-center gap-2">
               <span class="material-symbols-outlined text-purple-400">local_shipping</span>
               Desafio Logístico &amp; Estratégia de Dados
@@ -121,7 +116,7 @@
         </div>
 
         <div class="lg:col-span-4 space-y-6">
-          <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 space-y-4">
             <h3 class="text-base font-bold text-slate-100 border-b border-slate-800 pb-3">Informações do Projeto</h3>
             <div class="text-xs space-y-3 text-slate-300">
               <div>
@@ -144,13 +139,13 @@
     </div>
   </main>
 
-  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-8">
+  <footer class="bg-[#05080f] text-slate-400 border-t border-slate-800 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
       <p>&copy; 2026 Fabrício Silva. Todos os direitos reservados.</p>
       <div class="flex items-center gap-4">
         <a href="index.html" class="hover:text-slate-200">Página Inicial</a>
         <a href="index.html#projetos" class="hover:text-slate-200">Projetos</a>
-        <a href="curriculo.html" class="hover:text-slate-200">Currículo</a>
+        <a href="curriculo.html" class="hover:text-slate-200">Trajetória Separada</a>
       </div>
     </div>
   </footer>

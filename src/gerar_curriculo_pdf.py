@@ -165,11 +165,11 @@ def gerar_pdf_curriculo(destino_pdf: str = "Curriculo_Fabricio_Silva.pdf"):
     col_dev_dados = [
         Paragraph("<b>Pilar Desenvolvimento & Engenharia de Dados:</b>", bold_body_style),
         Paragraph("&bull; Python 3: Pandas, Openpyxl, Flask, Requests ETL", bullet_style),
-        Paragraph("&bull; SQL (PostgreSQL, SQL Server, MySQL): Queries &amp; JOINs", bullet_style),
+        Paragraph("&bull; SQL: PostgreSQL (bancos em prod), MySQL, SQLite &amp; JOINs", bullet_style),
         Paragraph("&bull; Power BI Impressionador: DAX Avançado &amp; Star Schema", bullet_style),
         Paragraph("&bull; Automação de Processos: N8N, Webhooks &amp; Power Automate", bullet_style),
         Paragraph("&bull; Parsing de XML de NF-e &amp; Conciliação Fiscal", bullet_style),
-        Paragraph("&bull; DevOps &amp; Versionamento: Git, GitHub &amp; Shell Scripting", bullet_style),
+        Paragraph("&bull; DevOps &amp; Linux: Servidor próprio (Apps, Sites, Bots 24/7 &amp; PostgreSQL)", bullet_style),
     ]
 
     skills_table = Table([[col_suprimentos, col_dev_dados]], colWidths=[282, 282])

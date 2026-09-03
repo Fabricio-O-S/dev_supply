@@ -329,11 +329,30 @@
           </span>
         </div>
 
+        <!-- FILTROS DA GRADE DE REPOSITÓRIOS -->
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-btn active px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-blue-600 text-white shadow-md shadow-blue-600/20" data-filter="all">
+            Todos (27)
+          </button>
+          <button class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="suprimentos">
+            Suprimentos &amp; Compras (10)
+          </button>
+          <button class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="web">
+            Web &amp; Sistemas (10)
+          </button>
+          <button class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="infra">
+            Infra &amp; DevOps (4)
+          </button>
+          <button class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="python">
+            Python &amp; Dados (3)
+          </button>
+        </div>
+
         <!-- GRID DE 27 PROJETOS -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
+
           <!-- REPO 1 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-blue-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-blue-500/30 flex flex-col justify-between" data-category="python">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
@@ -351,7 +370,7 @@
           </div>
 
           <!-- REPO 2 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="python">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
@@ -369,7 +388,7 @@
           </div>
 
           <!-- REPO 3 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
@@ -387,7 +406,7 @@
           </div>
 
           <!-- REPO 4 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="infra">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>
@@ -405,7 +424,7 @@
           </div>
 
           <!-- REPO 5 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -420,7 +439,7 @@
           </div>
 
           <!-- REPO 6 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="infra">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -435,7 +454,7 @@
           </div>
 
           <!-- REPO 7 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -450,7 +469,7 @@
           </div>
 
           <!-- REPO 8 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -465,7 +484,7 @@
           </div>
 
           <!-- REPO 9 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -480,7 +499,7 @@
           </div>
 
           <!-- REPO 10 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="infra">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -495,7 +514,7 @@
           </div>
 
           <!-- REPO 11 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="infra">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -510,7 +529,7 @@
           </div>
 
           <!-- REPO 12 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -525,7 +544,7 @@
           </div>
 
           <!-- REPO 13 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -540,7 +559,7 @@
           </div>
 
           <!-- REPO 14 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -555,7 +574,7 @@
           </div>
 
           <!-- REPO 15 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -570,7 +589,7 @@
           </div>
 
           <!-- REPO 16 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -585,7 +604,7 @@
           </div>
 
           <!-- REPO 17 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="python">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -600,7 +619,7 @@
           </div>
 
           <!-- REPO 18 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -615,7 +634,7 @@
           </div>
 
           <!-- REPO 19 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -630,7 +649,7 @@
           </div>
 
           <!-- REPO 20 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -645,7 +664,7 @@
           </div>
 
           <!-- REPO 21 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -660,7 +679,7 @@
           </div>
 
           <!-- REPO 23 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -675,7 +694,7 @@
           </div>
 
           <!-- REPO 24 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -690,7 +709,7 @@
           </div>
 
           <!-- REPO 25 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -705,7 +724,7 @@
           </div>
 
           <!-- REPO 26 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -720,7 +739,7 @@
           </div>
 
           <!-- REPO 27 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-purple-500/30 flex flex-col justify-between" data-category="suprimentos">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-purple-500/15 text-purple-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Privado</span>
@@ -735,7 +754,7 @@
           </div>
 
           <!-- REPO 29 -->
-          <div class="obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+          <div class="project-card obsidian-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-category="web">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="bg-blue-500/15 text-blue-400 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Público</span>

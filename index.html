@@ -378,6 +378,65 @@
   </section>
 
   <!-- ========================================================================= -->
+  <!-- MINI-CASOS DE NEGÓCIO (SUPRIMENTOS, LINGUAGEM NÃO TÉCNICA)                -->
+  <!-- ========================================================================= -->
+  <section class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-extrabold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20">
+          Resultados em Suprimentos
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+          Mini-Casos de Negócio
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Três situações reais de Supply Chain resolvidas com dado e negociação — sem precisar ler uma linha de código para entender o resultado.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <div class="obsidian-card p-6 rounded-2xl border border-emerald-500/25 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+            <span class="material-symbols-outlined">local_shipping</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-100">Renegociação de Fretes em Malha Industrial</h3>
+          <div class="text-xs text-slate-300 space-y-2.5">
+            <p><strong class="text-slate-100">Situação:</strong> custo alto de frete por tonelada e veículos rodando com espaço ocioso entre unidades.</p>
+            <p><strong class="text-slate-100">Ação:</strong> consolidação dos dados de rota e ocupação de frota num painel único, usado como base técnica para renegociar as tabelas com as transportadoras.</p>
+            <p><strong class="text-slate-100">Resultado:</strong> <span class="text-emerald-400 font-bold">-11,5% no custo de frete/ton</span>, 92,4% de ocupação de frota e 98,1% de SLA de entrega.</p>
+          </div>
+        </div>
+
+        <div class="obsidian-card p-6 rounded-2xl border border-emerald-500/25 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+            <span class="material-symbols-outlined">inventory_2</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-100">Fim da Compra Duplicada por Cadastro Bagunçado</h3>
+          <div class="text-xs text-slate-300 space-y-2.5">
+            <p><strong class="text-slate-100">Situação:</strong> base com mais de 15 mil materiais e descrições inconsistentes ("Rolamento", "Parafuso inox") gerando itens duplicados parados no almoxarifado.</p>
+            <p><strong class="text-slate-100">Ação:</strong> padronização das descrições no padrão PDM e auditoria cruzada da classificação fiscal NCM de cada item.</p>
+            <p><strong class="text-slate-100">Resultado:</strong> <span class="text-emerald-400 font-bold">-18% de duplicidades eliminadas</span> e 100% de conformidade fiscal auditada.</p>
+          </div>
+        </div>
+
+        <div class="obsidian-card p-6 rounded-2xl border border-emerald-500/25 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+            <span class="material-symbols-outlined">price_check</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-100">Sourcing com Visibilidade Ponta a Ponta</h3>
+          <div class="text-xs text-slate-300 space-y-2.5">
+            <p><strong class="text-slate-100">Situação:</strong> nenhuma visibilidade centralizada sobre pedidos em aberto, lead time de fornecedores ou pontualidade de entrega.</p>
+            <p><strong class="text-slate-100">Ação:</strong> cockpit de acompanhamento de OTIF, lead time médio e saving negociado por categoria de insumo, com alertas automáticos de atraso.</p>
+            <p><strong class="text-slate-100">Resultado:</strong> <span class="text-emerald-400 font-bold">+R$ 1,2M em saving acumulado</span> e 94,5% de OTIF nas entregas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
   <!-- GRADE DE PROJETOS E AUTOMAÇÕES                                            -->
   <!-- ========================================================================= -->
   <section id="projetos" class="py-20 border-b border-slate-800">
@@ -412,7 +471,7 @@
         <!-- PROJETO 1: VENDAS -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="analytics">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/dash_vendas.png" alt="Painel Comercial & Margens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/dash_vendas.webp" alt="Painel Comercial & Margens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_vendas.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -446,7 +505,7 @@
         <!-- PROJETO 2: COMPRAS -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="suprimentos">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/dash_compras.png" alt="Gestão de Compras & Saving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/dash_compras.webp" alt="Gestão de Compras & Saving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_compras.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -480,7 +539,7 @@
         <!-- PROJETO 3: LOGÍSTICA -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="analytics">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/dash_logistica.png" alt="Otimização Logística & Fretes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/dash_logistica.webp" alt="Otimização Logística & Fretes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_logistica.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -514,7 +573,7 @@
         <!-- PROJETO 4: SIMULADOR TRIBUTÁRIO -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="python">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/simulador_tributario.png" alt="Simulador Tributário" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/simulador_tributario.webp" alt="Simulador Tributário" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_simulador_tributario.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -548,7 +607,7 @@
         <!-- PROJETO 5: CONCILIAÇÃO FISCAL -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="python">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/conciliacao_fiscal.png" alt="Conciliação Fiscal NF-e" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/conciliacao_fiscal.webp" alt="Conciliação Fiscal NF-e" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_fiscal_conciliacao.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -582,7 +641,7 @@
         <!-- PROJETO 6: PADRONIZAÇÃO DE INSUMOS -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="suprimentos">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/padronizacao_pdm.png" alt="Padronização PDM & NCM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/padronizacao_pdm.webp" alt="Padronização PDM & NCM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_padronizacao_insumos.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -616,7 +675,7 @@
         <!-- PROJETO 7: MONITOR DE SAÚDE -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="analytics">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/monitor_saude.png" alt="Monitor de Saúde Operacional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/monitor_saude.webp" alt="Monitor de Saúde Operacional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_monitor_saude.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
@@ -650,7 +709,7 @@
         <!-- PROJETO 8: BACKUP PYTHON -->
         <div class="project-card obsidian-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col" data-category="python">
           <div class="h-48 overflow-hidden relative group">
-            <img src="images/backup_devops.png" alt="Rotina de Backup Python" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="images/backup_devops.webp" alt="Rotina de Backup Python" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="projeto_backup_python.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-500 shadow-lg">Ver Estudo Completo</a>
             </div>
